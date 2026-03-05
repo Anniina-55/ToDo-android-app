@@ -1,14 +1,32 @@
 package com.example.todo.viewModel
 
+import android.util.Log
+import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.todo.model.ToDo
+import com.example.todo.model.ToDosApi
+import kotlinx.coroutines.launch
 
 class ToDoViewModel: ViewModel() {
-    val todos = mutableListOf<String>()
+    var todos = mutableStateListOf<ToDo>()
+        private set
 
     init {
-        todos.add("Test task 1")
-        todos.add("Test task 2")
-        todos.add("Test task 3")
+        getTodosList()
+    }
 
+    private fun getTodosList() {
+        viewModelScope.launch {
+            var todosApi: ToDosApi = ToDosApi.getInstance()
+
+            try {
+                todosApi = ToDosApi.getInstance()
+                todos.clear()
+                todos.addAll(todosApi.getTodos())
+            } catch (e: Exception) {
+                Log.d("TODOVIEWMODEL", e.message.toString())
+            }
+        }
     }
 }
