@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.todo.ui.components.ToDoList
+import com.example.todo.viewModel.ToDoUIState
 import com.example.todo.viewModel.ToDoViewModel
 
 @Composable
@@ -26,7 +27,12 @@ fun ToDoScreen(
             color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.padding(bottom = 14.dp)
             )
-        ToDoList(todos = toDoViewModel.todos, modifier)
+        when (val uiState = toDoViewModel.todoUIState) {
+            is ToDoUIState.Loading -> LoadingScreen()
+            is ToDoUIState.Success -> ToDoList(todos = uiState.todos, modifier)
+            is ToDoUIState.Error -> ErrorScreen(modifier)
+        }
+        // ToDoList(todos = toDoViewModel.todos, modifier)
 
     }
 

@@ -12,9 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.todo.model.ToDo
+import com.example.todo.ui.theme.LightBeetroot
 
-
-val LightBeetroot = Color(0x3779003B)
 @Composable
 
 fun ToDoItem(todo: ToDo) {

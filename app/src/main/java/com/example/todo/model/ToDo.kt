@@ -1,5 +1,7 @@
 package com.example.todo.model
 
+
+data class Success(val todos: List<ToDo>)
 data class ToDo(
     //In case field names needed to be changed, @SerializedName annotation could be used -> e.g @SerializedName("userId") var uID: Int
     var userId: Int,

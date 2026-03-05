@@ -11,3 +11,5 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val Beetroot = Color(0xFF8E204B)
+val Error = Color(0xFFB00020)
+val LightBeetroot = Color(0x3779003B)

@@ -20,7 +20,9 @@ private val DarkColorScheme = darkColorScheme(
 private val LightColorScheme = lightColorScheme(
     primary = Beetroot,
     secondary = PurpleGrey40,
-    tertiary = Pink40
+    tertiary = Pink40,
+    error = Error,
+
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),

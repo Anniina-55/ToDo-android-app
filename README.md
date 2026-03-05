@@ -1,12 +1,14 @@
 # To-Do 
 This is simple Android app that displays to-do list. List data is retrieved through API which
 return items as JSON data (https://jsonplaceholder.typicode.com/todos). Implemented with **Kotlin + Jetpack Compose**.
+
 **Retrofit** is used for API calls and **Gson** is used for data conversion (JSON
 into Kotlin objects).
 
 ## Demo
+This displays Error screen, Loading screen and main ToDoScreen: 
 
-![Demo To-Do List](todo-demo.gif) 
+![Demo To-Do List](demo_todo_with_states.gif) 
 
 
 ## Running the app
